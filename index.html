@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Ribbit Rescue</title>
+  <meta name="description" content="A Frogger-style game in 3D: cross the roads and rivers, dodge the traffic, ride the logs, and rescue the princess." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%B8%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div class="pill">Level <span id="hud-level">1</span></div>
+    <div class="pill">Score <span id="hud-score">0</span></div>
+    <div class="pill">Lives <span id="hud-lives">🐸🐸🐸</span></div>
+  </div>
+
+  <div id="overlay" class="visible">
+    <h1>Ribbit Rescue</h1>
+    <p class="tagline">A frog. A princess. Far too much traffic.</p>
+    <p id="overlay-message">Cross the roads, ride the logs, and reach the princess at the top.<br />Arrow keys or WASD to hop. Swipe or use the buttons on touch screens.</p>
+    <button id="start-button">Hop to it</button>
+    <p class="small">Get hit and you explode. Try not to explode.</p>
+  </div>
+
+  <div id="banner"></div>
+
+  <div id="dpad" aria-label="Movement controls">
+    <button data-dir="up" aria-label="Hop forward">▲</button>
+    <button data-dir="left" aria-label="Hop left">◀</button>
+    <button data-dir="down" aria-label="Hop back">▼</button>
+    <button data-dir="right" aria-label="Hop right">▶</button>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

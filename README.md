@@ -2,10 +2,31 @@
 
 > A Frogger-style game reimagined in three dimensions: the frog explodes if it gets hit, and if it survives the crossing it saves the princess.
 
-- **Status:** seed
+- **Status:** playable prototype
 - **Tags:** game, fun
+- **Play it:** https://crumplabsandbox.github.io/3dfrogger/ (deployed from `main` by GitHub Actions)
 - **Captured:** 2026-10-11
 - **Source:** the `frog-crossing-3d` idea in the [Idea Console](https://github.com/CrumpLab/IdeaConsole/tree/main/ideas/frog-crossing-3d) (raw record: [`docs/idea.json`](docs/idea.json))
+
+## Playing
+
+The prototype is called **Ribbit Rescue** (a working name, since Frogger is a trademark).
+
+- **Goal.** Hop from the bottom of the screen to the castle at the top and reach the princess.
+- **Roads.** Cars, trucks and buses run in both directions. Touch one and the frog explodes.
+- **Rivers.** Water is deadly. Hop onto the logs and ride them across, but do not drift off the edge.
+- **Controls.** Arrow keys or WASD on a keyboard. On touch screens swipe, tap to hop forward, or use the on-screen buttons.
+- **Levels.** Each rescue starts a longer, faster level. You have three lives.
+
+## Development
+
+Everything is static: `index.html`, `src/main.js`, `src/style.css` and a vendored copy of [three.js](https://threejs.org/) in `vendor/`. There is no build step. To run it locally, serve the folder over HTTP (ES modules do not load from `file://`):
+
+```
+python3 -m http.server 8000
+```
+
+then open http://localhost:8000/. Pushing to `main` runs `.github/workflows/deploy.yml`, which uploads the site to GitHub Pages.
 
 ## What
 
@@ -39,4 +60,5 @@ Early thoughts, to refine in a workshop:
 
 ## Notes
 
+- 2026-10-11: Built the first playable prototype (roads, rivers with logs, exploding frog, princess rescue, escalating levels) and set up GitHub Pages deployment through GitHub Actions.
 - 2026-10-11: Captured from chat as a seed. The idea: a video game like Frogger transformed into three dimensions. The frog can get killed, and when it does it explodes. If it survives, it can save the princess.
